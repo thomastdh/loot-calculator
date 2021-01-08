@@ -1,0 +1,44 @@
+<template>
+  <div>
+    <div
+      class="flex flex-wrap -mx-0.5 mb-2">
+      <div
+        v-for="item in displayedItems"
+        :key="item.id"
+        class="w-1/2 md:w-1/3 lg:w-1/4 px-0.5 mb-1">
+        <shared-loot-item
+          :item="item"
+          :member-loot="memberLoot" />
+      </div>
+    </div>
+    <div class="py-2 border-t border-green-600">
+      <div class="text-right ">
+        <div class="text-sm text-gray-400">
+          Estimated Total
+        </div>
+        <div class="text-2xl text-yellow-400">
+          {{ memberLoot.loot_value ? memberLoot.loot_value.toLocaleString() : 0 }}
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import SharedLootItem from "./SharedLootItem";
+export default {
+  props: ['items', 'member-loot'],
+  components: {
+    SharedLootItem,
+  },
+  computed: {
+    displayedItems () {
+      return this.items
+    }
+  }
+}
+</script>
+
+<style>
+
+</style>
