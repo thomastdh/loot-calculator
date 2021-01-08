@@ -17,7 +17,6 @@
 
 <script>
 import $ from "jquery";
-import { ref, watch } from "vue";
 import Select2 from 'vue3-select2-component';
 import { GlobalEvents } from "vue-global-events";
 import ITEMS from "./../data/echoes_items";
@@ -83,29 +82,6 @@ const formatState = (state) => {
 };
 
 export default {
-  setup (props, { emit }) {
-    let localValue = ref('')
-
-    watch(() => props.value, (newVal) => {
-      if (!newVal.id) {
-        localValue.value = ''
-      }
-      localValue.value = newVal.id
-    })
-
-    const onSelect = (event) => {
-      emit('input', {
-        text: event.text,
-        id: event.id
-      })
-      localValue.value = ''
-    }
-
-    return {
-      localValue,
-      onSelect,
-    }
-  },
   props: [
     'value',
   ],
@@ -115,7 +91,9 @@ export default {
   },
   data () {
     return {
+      localValue: '',
       selectItems: FILTERED_ITEMS,
+      allowClear: true,
       selectSettings: {
         width: '100%',
         tags: true,
@@ -126,18 +104,22 @@ export default {
         minimumInputLength: 4,
         templateResult: formatState,
         matcher: function (params, data) {
-            if (!params.term) {
-              return data
-            }
-            if (params.term.trim() === '') {
-                return data;
-            }
-            const keywords= (params.term).split(" ");
-            for (var i = 0; i < keywords.length; i++) {
-                if (((data.text).toUpperCase()).indexOf((keywords[i]).toUpperCase()) == -1)
-                return null;
-            }
-            return data;
+          if (!params.term) {
+            return data
+          }
+          if (params.term.trim() === '') {
+              return data;
+          }
+          const keywords= (params.term).split(" ");
+          for (var i = 0; i < keywords.length; i++) {
+              if (((data.text).toUpperCase()).indexOf((keywords[i]).toUpperCase()) == -1)
+              return null;
+          }
+          return data;
+        },
+        insertTag: function (data, tag) {
+          // Insert the tag at the end of the results
+          data.push(tag);
         }
       },
     }
@@ -148,8 +130,18 @@ export default {
         return
       }
       this.$refs.select2.select2.select2('open')
-    }
-  }
+    },
+    onSelect (event) {
+      this.$emit('input', {
+        text: event.text,
+        id: event.id
+      })
+      this.$refs.select2.select2.select2('open')
+    },
+  },
+  mounted () {
+
+  },
 }
 </script>
 

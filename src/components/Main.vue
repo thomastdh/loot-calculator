@@ -117,10 +117,10 @@
             @click.prevent="startCalculation"
             type="button"
             :class="{
-              'bg-green-400 bg-opacity-80 hover:bg-green-700': canCaculateLoot,
-              'bg-gray-700 bg-opacity-80 cursor-not-allowed': !canCaculateLoot,
+              'bg-green-400 bg-opacity-80 hover:bg-green-700 text-white': canCaculateLoot,
+              'bg-gray-700 bg-opacity-80 cursor-not-allowed text-gray-500': !canCaculateLoot,
             }"
-            class="px-4 py-3 text-lg text-white transition duration-200 ease-in-out">
+            class="px-4 py-3 text-lg transition duration-200 ease-in-out">
             Calculate Loot
           </button>
         </div>
