@@ -437,4 +437,5 @@ export default [
   '41000000008.png',
   'blueprint_background.png',
   'blueprint_foreground.png',
+  '27021000008.png',
 ];

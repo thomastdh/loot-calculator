@@ -63,6 +63,7 @@ const imageBlueprintSrc = (id) => {
     '17180',
     '17190',
   ]
+
   if (identifier.indexOf(idToCheck) === -1) {
     return null
   }
@@ -107,6 +108,7 @@ export const getImage = (id, name) => {
   const profile = new ItemImageProfile(id, name)
   let imageById = null;
 
+  // Naive search by name
   if (!imageById) {
     try {
       let filename = getImageByPartialNameMatch(name)
@@ -123,6 +125,14 @@ export const getImage = (id, name) => {
     if (!imageById) {
       imageById = imageBlueprintSrc(id)
     }
+    // Try to partial match using module name (remove 'Blueprint' suffix)
+    if (!imageById) {
+      let moduleName = name.replace('Blueprint', '').trim()
+      let filename = getImageByPartialNameMatch(moduleName)
+      if (filename) {
+        imageById = require(`./../assets/items/${filename}`)
+      }
+    }
     return {
       src: imageById ?? FALLBACK.src,
       isBlueprint: true,
@@ -131,6 +141,7 @@ export const getImage = (id, name) => {
     }
   }
 
+  // Strict search by id as fallback
   if (!imageById) {
     try {
       imageById = require(`./../assets/items/${id}.png`)

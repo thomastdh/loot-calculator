@@ -9706,5 +9706,97 @@ export default [
   {
     "id": "61719030004",
     "text": "Drone Control Range Augmentor II Blueprint"
-  }
+  },
+  {
+    "id": "11347000004",
+    "text": "MK3 Warp Scrambler"
+  },
+  {
+      "id": "11347000006",
+      "text": "MK5 Warp Scrambler"
+  },
+  {
+      "id": "11347000008",
+      "text": "MK7 Warp Scrambler"
+  },
+  {
+      "id": "11347000010",
+      "text": "MK9 Warp Scrambler"
+  },
+  {
+      "id": "11347000012",
+      "text": "'Interruptive' Warp Scrambler"
+  },
+  {
+      "id": "11347000013",
+      "text": "Caldari Navy Warp Scrambler"
+  },
+  {
+      "id": "11347000014",
+      "text": "Federation Navy Warp Scrambler"
+  },
+  {
+      "id": "11347000015",
+      "text": "Republic Fleet Warp Scrambler"
+  },
+  {
+      "id": "11347000021",
+      "text": "'Predator' Warp Scrambler"
+  },
+  {
+      "id": "11348000004",
+      "text": "MK3 Tracking Disruptor"
+  },
+  {
+      "id": "11348000006",
+      "text": "MK5 Tracking Disruptor"
+  },
+  {
+      "id": "11348000008",
+      "text": "MK7 Tracking Disruptor"
+  },
+  {
+      "id": "11348000010",
+      "text": "MK9 Tracking Disruptor"
+  },
+  {
+      "id": "11348000012",
+      "text": "'Basic' Tracking Disruptor"
+  },
+  {
+      "id": "11348000013",
+      "text": "Imperial Navy Tracking Disruptor"
+  },
+  {
+      "id": "11348000021",
+      "text": "'Virus' Tracking Disruptor"
+  },
+  {
+      "id": "11349000004",
+      "text": "MK3 Guidance Disruptor"
+  },
+  {
+      "id": "11349000006",
+      "text": "MK5 Guidance Disruptor"
+  },
+  {
+      "id": "11349000008",
+      "text": "MK7 Guidance Disruptor"
+  },
+  {
+      "id": "11349000010",
+      "text": "MK9 Guidance Disruptor"
+  },
+  {
+      "id": "11349000012",
+      "text": "'Basic' Guidance Disruptor"
+  },
+  {
+      "id": "11349000013",
+      "text": "Caldari Navy Guidance Disruptor"
+  },
+  {
+      "id": "11349000021",
+      "text": "'Virus' Guidance Disruptor"
+  },
 ];
