@@ -104,7 +104,11 @@
         <div class="px-2 py-1">
           <div class="text-xs text-gray-400">Estimated Total</div>
           <div class="text-2xl text-yellow-400">
-            {{ currentTotal ? currentTotal.toLocaleString() : 0 }}
+            <animated-number
+              :value="currentTotal"
+              :formatValue="formatToPrice"
+              :easing="'easeInQuad'"
+              :duration="300" />
           </div>
         </div>
         <div class="ml-auto">
@@ -135,9 +139,9 @@
         </button>
       </div>
       <div class="flex flex-wrap items-stretch px-3 py-4 -mx-1">
-        <div class="order-3 w-full px-1 mb-4 md:w-3/12 md:order-1 md:mb-0">
-          <div class="flex flex-col h-full">
-            <div class="flex-grow bg-black bg-opacity-30">
+        <div class="relative order-3 w-full px-1 mb-4 md:w-3/12 md:order-1 md:mb-0">
+          <div class="flex flex-col md:sticky md:top-0">
+            <div class="bg-black bg-opacity-30">
               <div class="p-2 bg-green-900 bg-opacity-10">
                 <div class="text-green-700">Result</div>
               </div>
@@ -220,6 +224,7 @@ import Scroll from "./../services/scroll";
 import $ from "jquery";
 import { format } from "./../services/result-plaintext";
 import { mapGetters, mapState, mapActions } from "vuex";
+import AnimatedNumber from './common/AnimatedNumber.vue';
 export default {
   components: {
     Searcher,
@@ -228,6 +233,7 @@ export default {
     MemberLootList,
     ModalEditPrice,
     ModalSimple,
+    AnimatedNumber,
   },
   mounted () {
     // this.items = [
@@ -249,6 +255,15 @@ export default {
     // this.items.forEach(item => {
     //   this.$store.dispatch('checkItemPricingByAPI', {id: item.id})
     // })
+    // this.members = [
+    //   { id: 'Chapelini', text: 'Chapelini', },
+    //   { id: 'Chapelini 2', text: 'Chapelini 2', },
+    //   { id: 'Chapelini 3', text: 'Chapelini 3', },
+    //   { id: 'Chapelini 4', text: 'Chapelini 4', },
+    //   { id: 'Chapelini 5', text: 'Chapelini 5', },
+    //   { id: 'Chapelini 6', text: 'Chapelini 6', },
+    //   { id: 'Chapelini 7', text: 'Chapelini 7', },
+    // ]
   },
   data () {
     return {
@@ -297,6 +312,12 @@ export default {
       'calculateLoot',
       'resetItems',
     ]),
+    formatToPrice (val) {
+      if (!val) {
+        return 0
+      }
+      return Math.round(val).toLocaleString()
+    },
     async startCalculation () {
       await this.calculateLoot()
       setTimeout(() => {

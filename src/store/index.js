@@ -5,36 +5,7 @@ import { calculate_distribution } from "./../services/distribution-calculator";
 export default createStore({
   state: {
     items: [],
-    members: [
-      // {
-      //   id: 'Chapelini',
-      //   text: 'Chapelini',
-      // },
-      // {
-      //   id: 'Chapelini 2',
-      //   text: 'Chapelini 2',
-      // },
-      // {
-      //   id: 'Chapelini 3',
-      //   text: 'Chapelini 3',
-      // },
-      // {
-      //   id: 'Chapelini 4',
-      //   text: 'Chapelini 4',
-      // },
-      // {
-      //   id: 'Chapelini 5',
-      //   text: 'Chapelini 5',
-      // },
-      // {
-      //   id: 'Chapelini 6',
-      //   text: 'Chapelini 6',
-      // },
-      // {
-      //   id: 'Chapelini 7',
-      //   text: 'Chapelini 7',
-      // },
-    ],
+    members: [],
     savedMembers: [],
     pricingSheet: {},
     distribution: [],

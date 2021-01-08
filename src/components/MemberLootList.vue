@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="relative">
     <div
       class="flex flex-wrap -mx-0.5 mb-2">
       <div
@@ -11,7 +11,7 @@
           :member-loot="memberLoot" />
       </div>
     </div>
-    <div class="py-2 border-t border-green-600">
+    <div class="z-30 py-2 bg-black border-t border-green-600 md:sticky md:bottom-0 bg-opacity-70">
       <div class="text-right ">
         <div class="text-sm text-gray-400">
           Estimated Total
