@@ -79,6 +79,7 @@
         </div>
         <div class="order-2 w-full px-1 md:w-9/12 md:order-1">
           <div class="h-full p-2 pb-1 bg-black bg-opacity-40"
+            ref="itemListPanel"
             style="min-height: calc(100vh - 280px)">
             <div v-if="items.length <= 0"
               class="flex flex-col items-center justify-center h-full py-12">
@@ -100,7 +101,9 @@
           </div>
         </div>
       </div>
-      <div class="sticky bottom-0 z-30 flex p-2 mt-2 bg-black bg-opacity-70">
+      <div ref="itemListFooter"></div>
+      <div
+        class="sticky bottom-0 z-30 flex p-2 mt-2 bg-black bg-opacity-70">
         <div class="px-2 py-1">
           <div class="text-xs text-gray-400">Estimated Total</div>
           <div class="text-2xl text-yellow-400">
@@ -138,7 +141,7 @@
           Copy to Clipboard
         </button>
       </div>
-      <div class="flex flex-wrap items-stretch px-3 py-4 -mx-1">
+      <div class="flex-wrap items-stretch hidden px-3 py-4 -mx-1 md:flex">
         <div class="relative order-3 w-full px-1 mb-4 md:w-3/12 md:order-1 md:mb-0">
           <div class="flex flex-col md:sticky md:top-0">
             <div class="bg-black bg-opacity-30">
@@ -147,15 +150,16 @@
               </div>
               <div>
                 <div
-                  class="p-2 mb-1 cursor-pointer"
+                  class="relative p-2 mb-1 cursor-pointer"
                   @click="setActiveLootMember(distro.name)"
                   :class="{
                     'bg-green-700': lootActiveMember === distro.name,
-                    'bg-gray-700 bg-opacity-20': lootActiveMember !== distro.name,
+                    'bg-gray-700 bg-opacity-20 hover:bg-opacity-40': lootActiveMember !== distro.name,
                   }"
                   v-for="distro in distribution"
                   :key="distro.name">
                   {{ distro.name }}
+                  <div class="member-caret" v-if="lootActiveMember === distro.name"></div>
                 </div>
               </div>
             </div>
@@ -170,6 +174,21 @@
               :items="items"
               :member-loot="memberLoot" />
           </div>
+        </div>
+      </div> <!-- Desktop - Loot result -->
+
+      <!-- Mobile - Loot Result -->
+      <div class="block md:hidden">
+        <div
+          v-for="memberLoot in distribution"
+          :key="memberLoot.name"
+          class="p-4 mb-4 bg-black ">
+          <div class="mt-8 mb-4 text-lg text-white">
+            {{memberLoot.name}}
+          </div>
+          <member-loot-list
+            :items="items"
+            :member-loot="memberLoot" />
         </div>
       </div>
     </div>
@@ -348,6 +367,14 @@ export default {
         id: e.id,
       })
       this.currentSearch = {}
+      this.$nextTick(() => {
+        const itemPanelFooter = this.$refs.itemListFooter
+        const scroller = new Scroll()
+        let windowHeight = $(window).height()
+        scroller.scrollTo(
+          $(itemPanelFooter).offset().top - windowHeight + 80
+        )
+      })
     },
     onAddMember (e) {
       this.members = [
@@ -374,3 +401,32 @@ export default {
 }
 </script>
 
+<style scoped>
+.member-caret {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-right: 3px;
+  margin-top: -11px;
+}
+
+.member-caret:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-left: 10px solid #047857;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+.member-caret:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1px;
+  border-left: 9px solid #047857;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+}
+</style>

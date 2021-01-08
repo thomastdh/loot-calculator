@@ -17,6 +17,7 @@
       <item-price
         class="flex flex-col items-end"
         :show-time-ago="false"
+        :isEditable="false"
         :item="item" />
     </div>
   </div>

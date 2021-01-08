@@ -1,4 +1,7 @@
 function readableNumber(cost) {
+  if (Number.isNaN(cost) || cost === 0) {
+    return '0'
+  }
   var suffix = ['', 'k', 'm', 'b', 't'];
   var evaluated = Math.floor(Math.log(Math.abs(cost)) / Math.log(1000));
   return cost / Math.pow(1000, evaluated).toFixed(2).toString() + "" + suffix[evaluated];

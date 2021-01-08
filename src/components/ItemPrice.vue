@@ -1,5 +1,8 @@
 <template>
-<div class="flex flex-col items-end p-1 cursor-pointer hover:bg-gray-900 hover:bg-opacity-20"
+<div class="flex flex-col items-end p-1"
+  :class="{
+    'cursor-pointer hover:bg-gray-900 hover:bg-opacity-20': isEditable
+  }"
   @click="onEditPrice">
   <div class="relative flex items-center text-right">
     <div v-if="!isPriceLoading">
@@ -73,6 +76,9 @@ export default {
   },
   methods: {
     onEditPrice () {
+      if (!this.isEditable) {
+        return
+      }
       this.$store.commit('setEditPrice', this.item.id)
     }
   }
