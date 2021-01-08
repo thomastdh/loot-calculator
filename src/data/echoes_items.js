@@ -9799,4 +9799,32 @@ export default [
       "id": "11349000021",
       "text": "'Virus' Guidance Disruptor"
   },
+  {
+      "id": "11319000004",
+      "text": "MK3 Sensor Dampener",
+  },
+  {
+      "id": "11319000006",
+      "text": "MK5 Sensor Dampener",
+  },
+  {
+      "id": "11319000008",
+      "text": "MK7 Sensor Dampener",
+  },
+  {
+      "id": "11319000010",
+      "text": "MK9 Sensor Dampener",
+  },
+  {
+      "id": "11319000012",
+      "text": "'Smoke' Sensor Dampener",
+  },
+  {
+      "id": "11319000013",
+      "text": "Federation Navy Sensor Dampener",
+  },
+  {
+      "id": "11319000021",
+      "text": "'Code Cracker' Sensor Dampener",
+  },
 ];

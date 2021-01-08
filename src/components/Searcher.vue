@@ -68,7 +68,7 @@ const formatState = (state) => {
     let image = getImage(state.id, state.text)
     let result = `<div class="flex">
       <div class="relative w-8 h-8 mr-1">
-        ${ image.isBlueprint ? `<div class="p-0.5 bg-blue-500 bg-opacity-40">` : ''}
+        ${ image.isBlueprint ? `<div class="bg-blue-300 bg-opacity-30 p-0.5 rounded-sm">` : ''}
         <img
           class="w-full h-auto"
           src="${image.src}"/>

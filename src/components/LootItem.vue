@@ -29,7 +29,7 @@
       <item-image :item="item" />
     </div>
     <div
-      class="relative z-10 flex items-center justify-between px-2 py-1 text-sm">
+      class="relative z-10 flex items-center justify-between px-2 py-1 -mt-4 text-sm">
       <div class="flex items-center">
         <span class="inline-block">x</span>
         <input
