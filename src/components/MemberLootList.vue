@@ -12,12 +12,17 @@
       </div>
     </div>
     <div class="z-30 py-2 bg-black border-t border-green-600 md:sticky md:bottom-0 bg-opacity-70">
-      <div class="text-right ">
-        <div class="text-sm text-gray-400">
-          Estimated Total
+      <div class="flex items-center justify-between">
+        <div class="px-4 py-2 text-3xl text-white">
+          {{ memberLoot.loot.length }} <span class="-ml-1 text-sm text-gray-400">item(s)</span>
         </div>
-        <div class="text-2xl text-yellow-400">
-          {{ memberLoot.loot_value ? memberLoot.loot_value.toLocaleString() : 0 }}
+        <div>
+          <div class="text-sm text-gray-400">
+            Estimated Total
+          </div>
+          <div class="text-2xl text-yellow-400">
+            {{ memberLoot.loot_value ? memberLoot.loot_value.toLocaleString() : 0 }}
+          </div>
         </div>
       </div>
     </div>
