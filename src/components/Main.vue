@@ -11,18 +11,33 @@
             @input="onInput" />
         </div>
       </div>
-      <div class="flex justify-end px-4">
-        <button
-          class="inline-flex items-center px-2 py-1 text-sm text-white hover:bg-gray-700 hover:bg-opacity-70"
-          @click="resetItems"
-          type="button">
-          <svg
-            class="inline-block w-3 h-4 mr-1"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
-            <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
-          </svg>
-          Reset
-        </button>
+      <div class="flex justify-between px-4">
+        <div>
+          <button
+            class="inline-flex items-center px-2 py-1 text-sm text-white hover:bg-gray-700 hover:bg-opacity-70"
+            @click="onLoadLastSession"
+            type="button">
+            <svg
+              class="inline-block w-4 h-4 mr-1"
+              xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            Load Last Session
+          </button>
+        </div>
+        <div>
+          <button
+            class="inline-flex items-center px-2 py-1 text-sm text-white hover:bg-gray-700 hover:bg-opacity-70"
+            @click="resetItems"
+            type="button">
+            <svg
+              class="inline-block w-4 h-4 mr-1"
+              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
+            </svg>
+            Reset
+          </button>
+        </div>
       </div>
       <div class="flex flex-wrap items-stretch px-3 py-4 -mx-1">
         <div class="order-3 w-full px-1 mb-4 md:w-3/12 md:order-1 md:mb-0">
@@ -78,9 +93,18 @@
           </div>
         </div>
         <div class="order-2 w-full px-1 md:w-9/12 md:order-1">
-          <div class="h-full p-2 pb-1 bg-black bg-opacity-40"
+          <div class="relative h-full p-2 pb-1 bg-black bg-opacity-40"
             ref="itemListPanel"
-            style="min-height: calc(100vh - 280px)">
+            style="min-height: calc(100vh - 360px)">
+            <global-events
+              :filter="(event, handler, eventName) => event.target.tagName !== 'INPUT'"
+              @keydown="onKeyUp"
+              />
+            <div class="absolute top-0 left-0 -mt-5">
+              <div class="text-xs text-gray-400">
+                Press 'q' to batch update quantities (then 'TAB' to cycle through)
+              </div>
+            </div>
             <div v-if="items.length <= 0"
               class="flex flex-col items-center justify-center h-full py-12">
               <div class="inline-flex items-center justify-center w-16 h-16 p-1 mb-2 border border-gray-500 rounded-full">
@@ -244,6 +268,7 @@ import $ from "jquery";
 import { format } from "./../services/result-plaintext";
 import { mapGetters, mapState, mapActions } from "vuex";
 import AnimatedNumber from './common/AnimatedNumber.vue';
+import { GlobalEvents } from "vue-global-events";
 export default {
   components: {
     Searcher,
@@ -253,6 +278,7 @@ export default {
     ModalEditPrice,
     ModalSimple,
     AnimatedNumber,
+    GlobalEvents,
   },
   mounted () {
     // this.items = [
@@ -337,6 +363,17 @@ export default {
       }
       return Math.round(val).toLocaleString()
     },
+    onLoadLastSession () {
+      if (this.items.length > 0) {
+        let shouldClear = confirm('This will clear currently selected items, are you sure?')
+        if (!shouldClear) {
+          return
+        }
+      }
+      this.$store.commit('loadSessionMembers')
+      this.$store.commit('loadSessionItems')
+      this.$store.dispatch('checkMissingPrice')
+    },
     async startCalculation () {
       await this.calculateLoot()
       setTimeout(() => {
@@ -344,6 +381,8 @@ export default {
         let top = $(this.$refs.resultPanel).offset().top
         scroller.scrollTo(top)
       }, 100);
+      this.$store.commit('setSessionItems')
+      this.$store.commit('setSessionMembers')
     },
     setActiveLootMember (name) {
       this.$store.commit('setActiveLootMember', name)
@@ -397,6 +436,12 @@ export default {
       ref.select()
       document.execCommand('copy');
     },
+    onKeyUp () {
+      if (event.key !== 'q') {
+        return
+      }
+      $('input.qty-input').first().focus()
+    }
   }
 }
 </script>

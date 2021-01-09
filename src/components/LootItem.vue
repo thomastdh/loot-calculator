@@ -36,7 +36,7 @@
           type="text"
           :value="item.qty"
           @input="onChangeQty"
-          class="inline-block w-8 h-5 p-1 ml-1 text-xs text-white bg-black focus:outline-none focus:ring-2 focus:ring-gray-800 bg-opacity-30">
+          class="inline-block w-8 h-5 p-1 ml-1 text-xs text-white bg-black qty-input focus:outline-none focus:ring-2 focus:ring-gray-800 bg-opacity-30">
       </div>
       <item-price
         class="flex flex-col items-end"

@@ -2,6 +2,18 @@ import { createStore } from 'vuex'
 import { checkPrice } from '../services/price-check'
 import { calculate_distribution } from "./../services/distribution-calculator";
 
+import { useLocalStorage } from '@vueuse/core'
+
+// persist state in localStorage
+const LOCAL_STORE_ITEMS = useLocalStorage(
+  'ee-session-items',
+  [],
+)
+const LOCAL_STORE_MEMBERS = useLocalStorage(
+  'ee-members',
+  []
+)
+
 export default createStore({
   state: {
     items: [],
@@ -29,6 +41,18 @@ export default createStore({
     }
   },
   mutations: {
+    loadSessionItems (state) {
+      state.items = [...LOCAL_STORE_ITEMS.value]
+    },
+    loadSessionMembers (state) {
+      state.members = [...LOCAL_STORE_MEMBERS.value]
+    },
+    setSessionItems (state) {
+      LOCAL_STORE_ITEMS.value = [...state.items]
+    },
+    setSessionMembers (state) {
+      LOCAL_STORE_MEMBERS.value = [...state.members]
+    },
     updateItems (state, newList) {
       state.items = newList
     },
@@ -84,6 +108,14 @@ export default createStore({
     resetItems ({ state }) {
       state.items = []
       state.distribution = []
+    },
+    async checkMissingPrice ({ state, dispatch }) {
+      for (const item of state.items) {
+        if (state.pricingSheet[item.id]) {
+          return
+        }
+        await dispatch('checkItemPricingByAPI', { id: item.id })
+      }
     },
     async checkItemPricingByAPI ({ state }, { id }) {
       let result = await checkPrice(id)
