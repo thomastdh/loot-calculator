@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gray-400 bg-opacity-50">
+  <div class="bg-gray-400 bg-opacity-50 group">
     <item-header :item="item" />
     <div class="relative flex items-center justify-center h-32 pl-4">
       <div class="absolute top-0 left-0 p-1">
         <button type="button"
           tabindex="-1"
-          class="p-1 bg-black bg-opacity-0 rounded-full cursor-move handle hover:bg-opacity-20 hover:ring-2 hover:ring-black">
+          class="p-1 bg-black bg-opacity-0 rounded-full opacity-0 cursor-move group-hover:opacity-100 handle hover:bg-opacity-20 hover:ring-2 hover:ring-black">
           <svg
             class="w-3 h-3"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
@@ -18,7 +18,7 @@
           @click="onRemove"
           type="button"
           tabindex="-1"
-          class="p-1 hover:bg-red-800 hover:text-white hover:bg-opacity-30">
+          class="p-1 opacity-0 group-hover:opacity-100 hover:bg-red-800 hover:text-white hover:bg-opacity-30">
           <svg
             class="w-3 h-3"
             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">

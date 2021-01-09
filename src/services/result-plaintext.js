@@ -43,11 +43,11 @@ export const format = (distribution, total_value) => {
       let module_cost = readableNumber(distribution[member].loot[hash].price);
       output += '> ' + distribution[member].loot[hash].qty + 'x ' + distribution[member].loot[hash].text + ' @ ' + module_cost + ' ISK' + "\n";
     }
-    output += "\n";
     if ((runningOutput.length + output.length) > DISCORD_LIMIT) {
       results.push(runningOutput)
       runningOutput = output
     } else {
+      output += "\n";
       runningOutput += output
     }
   }

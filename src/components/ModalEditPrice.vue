@@ -43,6 +43,19 @@
                   ref="priceInput"
                   v-model="editedPrice"
                   class="inline-block w-full h-10 p-1 ml-1 text-2xl text-white bg-gray-900 border border-gray-600 bg-opacity-80 focus:bg-opacity-100 focus:outline-none focus:ring-2 focus:ring-gray-800 bg-opacity-30">
+                <div class="flex items-center justify-end w-full p-1 text-sm text-gray-500">
+                  {{ formattedEditedPrice }}
+                  <svg
+                    class="w-3 h-3 -mt-0.5"
+                    viewBox="0 0 255 255" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <g>
+                            <path d="M201.401367,227 L210.776367,174.412109 L205.942383,173.533203 C200.766602,190.232422 194.833984,201.316406 188.144531,206.785156 C181.455078,212.253906 171.860352,214.988281 159.360352,214.988281 L159.360352,214.988281 L77.9150391,214.988281 L208.432617,28.3671875 L61.5087891,28.3671875 L57.4072266,78.0253906 L62.9736328,78.0253906 C65.0244141,66.1113281 67.2949219,57.9814453 69.7851562,53.6357422 C72.2753906,49.2900391 75.8886719,45.9697266 80.625,43.6748047 C85.3613281,41.3798828 93.0029297,40.2324219 103.549805,40.2324219 L103.549805,40.2324219 L167.124023,40.2324219 L39.6826172,221.580078 L39.6826172,227 L201.401367,227 Z" fill="currentColor" fill-rule="nonzero"></path>
+                            <line x1="57.25" y1="126.75" x2="197.75" y2="127.25" id="Line" stroke="currentColor" stroke-width="4" stroke-linecap="square"></line>
+                        </g>
+                    </g>
+                  </svg>
+                </div>
               </div>
             </div>
           </div>
@@ -115,6 +128,12 @@ export default {
       }
       return null
     },
+    formattedEditedPrice () {
+      if (Number.isNaN(this.editedPrice)) {
+        return 0
+      }
+      return Math.round(this.editedPrice).toLocaleString()
+    }
   },
   methods: {
     onSetPrice () {
