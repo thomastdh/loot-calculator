@@ -37,13 +37,13 @@
       Checking price..
     </div>
     <div v-else-if="!price.hasMarketPrice"
-      class="text-yellow-300">
+      class="text-red-300">
       Missing market data
     </div>
     <div v-else-if="price"
       :class="{
         'text-green-500': price.status === 'PRICE_RECENT',
-        'text-white': price.status === 'PRICE_STALE',
+        'text-red-300': price.status === 'PRICE_STALE',
       }">
       From {{ price.hoursAgo.toFixed(0) }} hours ago
     </div>
