@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex items-center justify-center w-24 h-32 mx-auto lg:w-32 xl:w-36">
+    class="relative flex items-center justify-center h-32 mx-auto w-36 lg:w-32 xl:w-36">
     <img
       class="absolute top-0 left-0 z-0 object-contain w-full h-full"
       :src="blueprintBackground"
