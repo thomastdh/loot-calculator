@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="relative mt-8 text-white bg-gray-700 border-t-4 border-green-700 bg-opacity-40">
+    <div class="relative text-white bg-gray-700 border-t-4 border-green-700 md:mt-8 bg-opacity-40">
       <div class="sticky top-0 z-30 flex p-2 mb-4 bg-black bg-opacity-50">
-        <div class="ml-auto w-96">
-          <div class="text-xs text-right text-gray-400">
+        <div class="w-full ml-auto md:w-96">
+          <div class="hidden text-xs text-right text-gray-400 md:block">
             Press '/' to add item
           </div>
           <searcher
@@ -14,11 +14,11 @@
       <div class="flex justify-between px-4">
         <div>
           <button
-            class="inline-flex items-center px-2 py-1 text-sm text-white hover:bg-gray-700 hover:bg-opacity-70"
+            class="inline-flex items-center px-2 py-1 text-sm text-white bg-black border border-green-800 bg-opacity-30 hover:bg-green-700 hover:bg-opacity-70"
             @click="onLoadLastSession"
             type="button">
             <svg
-              class="inline-block w-4 h-4 mr-1"
+              class="inline-block w-4 h-4 mr-1 -mt-0.5"
               xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
@@ -27,11 +27,11 @@
         </div>
         <div>
           <button
-            class="inline-flex items-center px-2 py-1 text-sm text-white hover:bg-gray-700 hover:bg-opacity-70"
+            class="inline-flex items-center px-2 py-1 text-sm text-white bg-black border border-green-800 bg-opacity-30 hover:bg-green-700 hover:bg-opacity-70"
             @click="resetItems"
             type="button">
             <svg
-              class="inline-block w-4 h-4 mr-1"
+              class="inline-block w-4 h-4 mr-1 -mt-0.5"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clip-rule="evenodd" />
             </svg>
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="mt-2">
-              <div class="text-xs text-gray-400">
+              <div class="hidden text-xs text-gray-400 md:block">
                 Press 'm' to add member
               </div>
               <member-searcher
@@ -100,7 +100,7 @@
               :filter="(event, handler, eventName) => event.target.tagName !== 'INPUT'"
               @keydown="onKeyUp"
               />
-            <div class="absolute top-0 left-0 -mt-5">
+            <div class="absolute top-0 left-0 hidden -mt-5 md:block">
               <div class="text-xs text-gray-400">
                 Press 'q' to batch update quantities (then 'TAB' to cycle through)
               </div>
@@ -159,13 +159,18 @@
       v-if="distribution.length">
       <div class="flex justify-end px-3 py-3">
         <button
-          class=""
+          class="inline-flex items-center px-2 py-1 text-sm text-white bg-black border border-green-800 bg-opacity-30 hover:bg-green-700 hover:bg-opacity-70"
           @click="onShowClipboardResult"
           type="button">
+          <svg
+            class="w-4 h-4 mr-2 text-gray-400 -mt-0.5"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+          </svg>
           Copy to Clipboard
         </button>
       </div>
-      <div class="flex-wrap items-stretch hidden px-3 py-4 -mx-1 md:flex">
+      <div class="flex-wrap items-stretch hidden px-3 py-1 -mx-1 md:flex">
         <div class="relative order-3 w-full px-1 mb-4 md:w-3/12 md:order-1 md:mb-0">
           <div class="flex flex-col md:sticky md:top-0">
             <div class="bg-black bg-opacity-30">
@@ -410,6 +415,9 @@ export default {
         const itemPanelFooter = this.$refs.itemListFooter
         const scroller = new Scroll()
         let windowHeight = $(window).height()
+        if ($(window).width() <= 960) {
+          return
+        }
         scroller.scrollTo(
           $(itemPanelFooter).offset().top - windowHeight + 80
         )

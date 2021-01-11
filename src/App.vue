@@ -1,7 +1,7 @@
 <template>
 <div class="w-full min-h-screen bg-black bg-cover main-bg">
   <navigation />
-  <div class="px-8 pb-12 mx-auto max-w-7xl ">
+  <div class="pb-12 mx-auto md:px-8 max-w-7xl ">
     <app-main/>
   </div>
 </div>

@@ -9827,4 +9827,32 @@ export default [
       "id": "11319000021",
       "text": "'Code Cracker' Sensor Dampener",
   },
+  {
+      "id": "11330000004",
+      "text": "MK3 Target Painter",
+  },
+  {
+      "id": "11330000006",
+      "text": "MK5 Target Painter",
+  },
+  {
+      "id": "11330000008",
+      "text": "MK7 Target Painter",
+  },
+  {
+      "id": "11330000010",
+      "text": "MK9 Target Painter",
+  },
+  {
+      "id": "11330000012",
+      "text": "'Guide' Target Painter",
+  },
+  {
+      "id": "11330000013",
+      "text": "Republic Fleet Target Painter",
+  },
+  {
+      "id": "11330000021",
+      "text": "'Halley' Target Painter",
+  },
 ];
