@@ -448,7 +448,12 @@ export default {
       if (event.key !== 'q') {
         return
       }
-      $('input.qty-input').first().focus()
+      setTimeout(() => {
+        $('input.qty-input')
+          .first()
+          .focus()
+          .select()
+      }, 100);
     }
   }
 }

@@ -136,6 +136,9 @@ export default {
         text: event.text,
         id: event.id
       })
+      this.localValue = null
+      $(this.$refs.select2.select2).val(null)
+      $(this.$refs.select2.select2).trigger('change')
       this.$refs.select2.select2.select2('open')
     },
   },

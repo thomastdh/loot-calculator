@@ -16,27 +16,11 @@
 </template>
 
 <script>
-import { ref } from "vue";
+import $ from "jquery";
 import Select2 from 'vue3-select2-component';
 import { GlobalEvents } from "vue-global-events";
 
 export default {
-  setup (props, { emit }) {
-    let localValue = ref('')
-
-    const onSelect = (event) => {
-      emit('input', {
-        text: event.text,
-        id: event.id
-      })
-      localValue.value = ''
-    }
-
-    return {
-      localValue,
-      onSelect,
-    }
-  },
   props: [
   ],
   components: {
@@ -45,6 +29,7 @@ export default {
   },
   data () {
     return {
+      localValue: '',
       selectItems: [],
       selectSettings: {
         width: '100%',
@@ -62,7 +47,16 @@ export default {
         return
       }
       this.$refs.select2.select2.select2('open')
-    }
+    },
+    onSelect (event) {
+      this.$emit('input', {
+        text: event.text,
+        id: event.id
+      })
+      this.localValue = null
+      $(this.$refs.select2.select2).val(null)
+      $(this.$refs.select2.select2).trigger('change')
+    },
   }
 }
 </script>
