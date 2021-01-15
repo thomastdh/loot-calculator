@@ -142,9 +142,6 @@ export default {
       this.$refs.select2.select2.select2('open')
     },
   },
-  mounted () {
-
-  },
 }
 </script>
 

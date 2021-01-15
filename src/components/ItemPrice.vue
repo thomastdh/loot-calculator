@@ -45,7 +45,12 @@
         'text-green-500': price.status === 'PRICE_RECENT',
         'text-red-300': price.status === 'PRICE_STALE',
       }">
-      From {{ price.hoursAgo.toFixed(0) }} hours ago
+      <span v-if="Math.round(price.hoursAgo) <= 1">
+        Less than an hour ago
+      </span>
+      <span v-else>
+        From {{ price.hoursAgo.toFixed(0) }} hour{{Math.round(price.hoursAgo) !== 1 ? 's' : ''}} ago
+      </span>
     </div>
   </div>
 </div>
