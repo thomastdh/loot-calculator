@@ -1,12 +1,13 @@
 <template>
   <div
-    class="relative flex items-center justify-center h-32 mx-auto w-36 lg:w-32 xl:w-36">
+    class="relative flex items-center justify-center mx-auto"
+      :class="wrapperSizeCss">
     <img
-      class="absolute top-0 left-0 z-0 object-contain w-full h-full"
+      class="absolute top-0 left-0 z-0 object-contain w-full h-full mt-0 mb-0"
       :src="blueprintBackground"
       v-if="image.isBlueprint">
     <img
-      class="absolute top-0 left-0 z-0 object-contain w-full h-full"
+      class="absolute top-0 left-0 z-0 object-contain w-full h-full mt-0 mb-0"
       :src="blueprintForeground"
       v-if="image.isBlueprint">
     <img
@@ -29,7 +30,8 @@
 import { getImage } from "../services/item-image";
 export default {
   props: [
-    'item'
+    'item',
+    'size',
   ],
   data () {
     return {
@@ -37,6 +39,19 @@ export default {
     }
   },
   computed: {
+    wrapperSizeCss () {
+      let size = 'default'
+      if (this.size) {
+        size = this.size
+      }
+      switch (size) {
+        case 'xs':
+          return 'h-12 w-12';
+        case 'default':
+        default:
+          return 'h-32 w-36 lg:w-32 xl:w-36';
+      }
+    },
     image () {
       return getImage(this.item.id, this.item.text)
     },

@@ -5,10 +5,34 @@
         <h1 class="text-2xl text-white">Changelogs</h1>
       </div>
       <div class="p-4 mb-1 space-y-4 text-white bg-black bg-opacity-90">
-        <div class="prose">
+        <div class="">
           <div>
-            <h3 class="pl-4 uppercase border-l-4 border-green-500">15 Jan 2021</h3>
-            <ul>
+            <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">4 Feb 2021</h3>
+            <ul class="pl-4 mb-6 text-white list-disc">
+              <li class="">
+                <div class="flex flex-wrap items-center">
+                  Added missing
+                  <div class="inline-flex items-center">
+                    <item-image size="xs" :item="{
+                      'id': '61026000006',
+                      'text': 'MK5 Interdiction Sphere Launcher Blueprint',
+                  }" />
+                    <div>Interdiction Bubble Blueprint</div>
+                  </div>
+                  &nbsp; and <div class="inline-flex items-center">
+                    <item-image size="xs" :item="{
+        'id': '61116000006',
+        'text': 'MK5 Warp Disruption Field Generator Blueprint',
+    }" />
+                    <div>Warp Disruption Generator Blueprint</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">15 Jan 2021</h3>
+            <ul class="pl-4 mb-6 text-white list-disc">
               <li>
                 New API Provider selector to change where market price data are retrieved from. You can now select Trimark Market API which is preferred as it provides more up-to-date pricing information. Your preferred API will also be stored locally for your future sessions.
               </li>
@@ -18,7 +42,7 @@
             </ul>
           </div>
           <div>
-            <h3 class="pl-4 uppercase border-l-4 border-green-500">Beginning of time</h3>
+            <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">Beginning of time</h3>
             <p>
               Greetings Capsuleers!
             </p>
@@ -33,7 +57,11 @@
 </template>
 
 <script>
+import ItemImage from "./../components/ItemImage.vue";
 export default {
+  components: {
+    ItemImage,
+  },
   mounted () {
     this.$store.commit('setSessionChangelogRead')
   }

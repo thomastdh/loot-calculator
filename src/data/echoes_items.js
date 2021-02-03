@@ -9855,4 +9855,28 @@ export default [
       "id": "11330000021",
       "text": "'Halley' Target Painter",
   },
+  {
+      "id": "61026000006",
+      "text": "MK5 Interdiction Sphere Launcher Blueprint",
+  },
+  {
+      "id": "61026000008",
+      "text": "MK7 Interdiction Sphere Launcher Blueprint",
+  },
+  {
+      "id": "61026000010",
+      "text": "MK9 Interdiction Sphere Launcher Blueprint",
+  },
+  {
+      "id": "61116000006",
+      "text": "MK5 Warp Disruption Field Generator Blueprint",
+  },
+  {
+      "id": "61116000008",
+      "text": "MK7 Warp Disruption Field Generator Blueprint",
+  },
+  {
+      "id": "61116000010",
+      "text": "MK9 Warp Disruption Field Generator Blueprint",
+  },
 ];

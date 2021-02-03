@@ -3,7 +3,7 @@ import { checkPriceEchoesMarket, checkPriceTrimark } from '../services/price-che
 import { calculate_distribution } from "./../services/distribution-calculator";
 import { useLocalStorage } from '@vueuse/core'
 
-const CHANGELOG_VERSION = '2021-01-15-1';
+const CHANGELOG_VERSION = '2021-02-04-1';
 
 // persist state in localStorage
 const LOCAL_STORE_ITEMS = useLocalStorage(
