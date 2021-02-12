@@ -3,7 +3,7 @@ import { checkPriceEchoesMarket, checkPriceTrimark } from '../services/price-che
 import { calculate_distribution } from "./../services/distribution-calculator";
 import { useLocalStorage } from '@vueuse/core'
 
-const CHANGELOG_VERSION = '2021-02-04-1';
+const CHANGELOG_VERSION = '2021-02-12-1';
 
 // persist state in localStorage
 const LOCAL_STORE_ITEMS = useLocalStorage(
@@ -51,6 +51,13 @@ export default createStore({
         total += (price.price * item.qty)
       })
       return total
+    },
+    averageLootValue: (state, getters) => {
+      if (state.members.length === 0 || getters.currentTotal === 0) {
+        return 0
+      }
+      const average = getters.currentTotal / state.members.length
+      return Math.floor(average)
     },
     hasUnreadChangelog: state => {
       return state.changelogVersion !== LOCAL_STORE_SETTINGS.value.changelogRead

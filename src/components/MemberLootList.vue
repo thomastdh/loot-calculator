@@ -18,12 +18,14 @@
         <div class="px-4 py-2 text-3xl text-white">
           {{ memberLoot.loot.length }} <span class="-ml-1 text-sm text-gray-400">item(s)</span>
         </div>
-        <div class="pr-4">
-          <div class="text-sm text-gray-400">
-            Estimated Total
-          </div>
-          <div class="text-2xl text-yellow-400">
-            {{ memberLoot.loot_value ? memberLoot.loot_value.toLocaleString() : 0 }}
+        <div class="flex pr-4">
+          <div>
+            <div class="text-sm text-gray-400">
+              Estimated Total
+            </div>
+            <div class="text-2xl text-yellow-400">
+              {{ lootValue ? lootValue.toLocaleString() : 0 }}
+            </div>
           </div>
         </div>
       </div>
@@ -32,6 +34,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
 import SharedLootItem from "./SharedLootItem";
 export default {
   props: ['items', 'member-loot'],
@@ -39,9 +42,25 @@ export default {
     SharedLootItem,
   },
   computed: {
+    ...mapGetters([
+      'averageLootValue'
+    ]),
+    lootValue () {
+      if (!this.memberLoot.loot_value) {
+        return 0
+      }
+      return this.memberLoot.loot_value
+    },
     displayedItems () {
       return this.items
-    }
+    },
+    lootValueDiffPercent () {
+      const diff = this.lootValue - this.averageLootValue
+      return Math.floor((diff / this.averageLootValue) * 100)
+    },
+    hasLootValueDiff () {
+      return Math.abs(this.lootValue - this.averageLootValue)
+    },
   }
 }
 </script>

@@ -4209,7 +4209,7 @@ export default [
   },
   {
     "id": "61710000002",
-    "text": "Small Dynamic Fuel Valve I Blueprint"
+    "text": "Dynamic Fuel Valve I Blueprint"
   },
   {
     "id": "80001702180",
@@ -4377,7 +4377,7 @@ export default [
   },
   {
     "id": "61708030002",
-    "text": "Small Trimark Armor Pump I Blueprint"
+    "text": "Trimark Armor Pump I Blueprint"
   },
   {
     "id": "11006100008",
@@ -4849,7 +4849,7 @@ export default [
   },
   {
     "id": "61708020004",
-    "text": "Remote Repair Augmentor II Blueprint"
+    "text": "Repair Augmentor II Blueprint"
   },
   {
     "id": "11502000013",
@@ -4869,7 +4869,7 @@ export default [
   },
   {
     "id": "61710020006",
-    "text": "Small Polycarbon Engine Housing III Blueprint"
+    "text": "Polycarbon Engine Housing III Blueprint"
   },
   {
     "id": "11700010008",
@@ -5345,7 +5345,7 @@ export default [
   },
   {
     "id": "61711000004",
-    "text": "Small Semiconductor Memory Cell II Blueprint"
+    "text": "Semiconductor Memory Cell II Blueprint"
   },
   {
     "id": "10300000302",
@@ -5409,7 +5409,7 @@ export default [
   },
   {
     "id": "61708030004",
-    "text": "Small Trimark Armor Pump II Blueprint"
+    "text": "Trimark Armor Pump II Blueprint"
   },
   {
     "id": "11100100013",
@@ -5897,7 +5897,7 @@ export default [
   },
   {
     "id": "61708020006",
-    "text": "Remote Repair Augmentor III Blueprint"
+    "text": "Repair Augmentor III Blueprint"
   },
   {
     "id": "61708040004",
@@ -6369,7 +6369,7 @@ export default [
   },
   {
     "id": "61708030006",
-    "text": "Small Trimark Armor Pump III Blueprint"
+    "text": "Trimark Armor Pump III Blueprint"
   },
   {
     "id": "11002310010",
@@ -6429,11 +6429,11 @@ export default [
   },
   {
     "id": "61710000004",
-    "text": "Small Dynamic Fuel Valve II Blueprint"
+    "text": "Dynamic Fuel Valve II Blueprint"
   },
   {
     "id": "61710020002",
-    "text": "Small Polycarbon Engine Housing I Blueprint"
+    "text": "Polycarbon Engine Housing I Blueprint"
   },
   {
     "id": "11313400010",
@@ -6925,7 +6925,7 @@ export default [
   },
   {
     "id": "61711000002",
-    "text": "Small Semiconductor Memory Cell I Blueprint"
+    "text": "Semiconductor Memory Cell I Blueprint"
   },
   {
     "id": "11016000021",
@@ -7865,7 +7865,7 @@ export default [
   },
   {
     "id": "61711000006",
-    "text": "Small Semiconductor Memory Cell III Blueprint"
+    "text": "Semiconductor Memory Cell III Blueprint"
   },
   {
     "id": "10500000201",
@@ -9013,7 +9013,7 @@ export default [
   },
   {
     "id": "61708020002",
-    "text": "Remote Repair Augmentor I Blueprint"
+    "text": "Repair Augmentor I Blueprint"
   },
   {
     "id": "61702020006",
@@ -9021,7 +9021,7 @@ export default [
   },
   {
     "id": "61710000006",
-    "text": "Small Dynamic Fuel Valve III Blueprint"
+    "text": "Dynamic Fuel Valve III Blueprint"
   },
   {
     "id": "60100000101",
@@ -9057,7 +9057,7 @@ export default [
   },
   {
     "id": "61710020004",
-    "text": "Small Polycarbon Engine Housing II Blueprint"
+    "text": "Polycarbon Engine Housing II Blueprint"
   },
   {
     "id": "10600001304",

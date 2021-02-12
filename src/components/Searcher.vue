@@ -28,6 +28,10 @@ const FILTERED_ITEMS = ITEMS.filter((item) => {
   if (id.startsWith('10')) {
     return false;
   }
+  // Already-made rigs
+  if (id.startsWith('1171') || id.startsWith('1170')) {
+    return false;
+  }
   // Ship blueprints
   if (id.startsWith('60')) {
     return false;

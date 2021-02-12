@@ -7,6 +7,31 @@
       <div class="p-4 mb-1 space-y-4 text-white bg-black bg-opacity-90">
         <div class="">
           <div>
+            <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">12 Feb 2021</h3>
+            <ul class="pl-4 mb-6 text-white list-disc">
+              <li>
+                <div class="flex flex-wrap items-center">
+                  Removed 'Small' prefix on some blueprints to match in-game item names.
+                </div>
+              </li>
+              <li>
+                Removed all <strong class="underline">manufactured</strong> rigs from search dropdown (blueprints are obviously still available to search).
+              </li>
+              <li class="">
+                <div class="flex flex-wrap items-center">
+                  Removed 'Remote' prefix from
+                  <div class="inline-flex items-center">
+                    <item-image size="xs" :item="{
+                      'id': '61708020002',
+                      'text': 'Repair Augmentor I Blueprint',
+                  }" />
+                    <div>Repair Augmentor Blueprints</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div>
             <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">4 Feb 2021</h3>
             <ul class="pl-4 mb-6 text-white list-disc">
               <li class="">
