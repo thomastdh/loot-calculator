@@ -1,5 +1,4 @@
 export default [
- [{"id":itemId,"text":"itemName"},
 {"id":10100000101,"text":"Griffin"},
 {"id":10100000103,"text":"Bantam"},
 {"id":10100000104,"text":"Bantam II"},
