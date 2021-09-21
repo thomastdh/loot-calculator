@@ -11,7 +11,7 @@
             <ul class="pl-4 mb-6 text-white list-disc">
               <li>
                 <div class="flex flex-wrap items-center">
-                  Removed 'Small' prefix on some blueprints to match in-game item names - working on updating for new/old loot.
+                  Removed 'Small' prefix on some blueprints to match in-game item names.
                 </div>
               </li>
               <li>
