@@ -1,8 +1,20 @@
 export default [
-  {
-    "id": "11514200012",
-    "text": "'Abatis' 200mm Reinforced Steel Plate "
-  },
+  {"id": "11514200012","text": "'Abatis' 200mm Reinforced Steel Plate "},
+  {"id":"41705000000, "text": "Medium I Guristas Experiment Data "},
+  {"id":"41705000002,"text":"Medium I Blood Raider Experiment Data "},
+  {"id":"41705000001,"text":"Medium I Sansha Experiment Data"},
+  {"id":"41705000003,"text":"Medium I Angel Experiment Data"},
+  {"id":"41705000004,"text":"Medium I Serpentis Experiment Data"},
+  {"id":"41705000006,"text":"Medium II Guristas Experiment Data"},
+  {"id":"41705000007,"text":"Medium II Sansha Experiment Data"},
+  {"id":"41705000008,"text":"Medium II Blood Raider Experiment Data"},
+  {"id":"41705000009,"text":"Medium II Angel Experiment Data"},
+  {"id":"41705000010,"text":"Medium II Serpentis Experiment Data"},
+  {"id":"41705000013,"text":"Medium III Sansha Experiment Data"},
+  {"id":"41705000014,"text":"Medium III Blood Raider Experiment Data"},
+  {"id":"41705000012,"text":"Medium III Guristas Experiment Data"},
+  {"id":"41705000015,"text":"Medium III Angel Experiment Data"},
+  {"id":"41705000016,"text":"Medium III Serpentis Experiment Data"},
   {
     "id": "11511000012",
     "text": "'Aura' Warp Core Stabilizer"
