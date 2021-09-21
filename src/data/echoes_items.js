@@ -1,12 +1,6 @@
 export default [
-  {
-    "id": "11514200012",
-    "text": "'Abatis' 200mm Reinforced Steel Plate "
-  },
-  {
-    "id": "11511000012",
-    "text": "'Aura' Warp Core Stabilizer"
-  },
+  {"id":"11514200012","text":"'Abatis' 200mm Reinforced Steel Plate"},
+  {"id":"11511000012","text":"'Aura' Warp Core Stabilizer"},
   {
     "id": "11539200021",
     "text": "'Bannerman' Large Group Shield Booster "
