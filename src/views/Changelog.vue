@@ -6,6 +6,16 @@
       </div>
       <div class="p-4 mb-1 space-y-4 text-white bg-black bg-opacity-90">
         <div class="">
+          </div>
+          <div>
+            <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">Beginning of time</h3>
+            <p>
+              Greetings Capsuleers!
+            </p>
+            <p>
+              This tool has now been updated by Nexus, thx to the original creator (Chapelini), Axol, Frough and Exekiel for helping me figure this out and providing data.
+            </p>
+          </div>
           <div>
             <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">12 Feb 2021</h3>
             <ul class="pl-4 mb-6 text-white list-disc">
