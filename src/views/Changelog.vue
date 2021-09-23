@@ -12,7 +12,7 @@
               Hello Capsuleers!
             </p>
             <p>
-              This tool has now been updated by Nexus, Many thank to the original creator (Chapelini), Axol, Frough and Exekiel for helping me figure this out and providing data.
+              This tool has now been updated by Nexus, Many thank to the original creator (Chapelini), Axol, Frough and Exekiel for helping me figure this out and providing data.<br>
             </p>
           </div>
           <div>
