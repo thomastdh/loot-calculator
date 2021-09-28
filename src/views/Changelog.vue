@@ -15,7 +15,10 @@
               This tool has now been updated by Nexus.<br/> 
               It now contains the new nihilus items and all that was missing. Images for those will soon come. <br/>
               Many thank to the original creator (Chapelini), Axol and Frough for helping me figure this out and providing data.<br/>
-               <br/<
+            </p>
+            <p>
+              Kind regards and good looting,<br/>
+              Nexus <br/>
             </p>
           </div>
           <div>
