@@ -291,7 +291,7 @@ export default [
 {"id":"11304600018","text":"Domination Medium Afterburner"},
 {"id":"11304600021","text":"Ranger' Medium Afterburner"},
 {"id":"11304600024","text":"Centum C-Type Medium Afterburner"},
-{"id":"11304600025","text":"Corelum C-Type Medium Afterburner"},,
+{"id":"11304600025","text":"Corelum C-Type Medium Afterburner"},
 {"id":"11304700012","text":"Smuggler Large Afterburner"},
 {"id":"11304700013","text":"Federation Navy Large Afterburner"},
 {"id":"11304700014","text":"Republic Fleet Large Afterburner"},
