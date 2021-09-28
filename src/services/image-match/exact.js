@@ -76,4 +76,8 @@ export default {
   'Republic Fleet Bouncer': '14000300009.png',
   'MK7 Bouncer': '14000300009.png',
   'MK9 Bouncer': '14000300009.png',
+  
+  //Nihilus loot
+  'Blood Raider Data Compiler': '44070001000.png',
+  
 }
