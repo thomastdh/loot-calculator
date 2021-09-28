@@ -79,5 +79,9 @@ export default {
   
   //Nihilus loot
   'Blood Raider Data Compiler': '44070001000.png',
+  'Guristas Data Compiler': '44050001000.png',
+  'Sansha Data Compiler': '44060001000.png',
+  'Angel Data Compiler': '44080001000.PNG',
+  'Serpentis Data Compiler': '44090001000.png',
   
 }
