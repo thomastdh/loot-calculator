@@ -53,6 +53,9 @@ export default {
   'Group Capacitor Transmitter': '11541000000.png',
   'Interdiction Sphere Launcher': '11026000000.png',
   'Warp Disruption Field Generator': '11116000000.png',
+  'Skirmish Command Burst ': '61126200010.png',
+  'Armored Command Burst': '61125100008.png',
+  'Shield Command Burst': '61124000008.png',
 
   // Low-slots
   'Shield Booster': '130140401.png',
