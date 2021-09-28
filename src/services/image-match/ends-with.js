@@ -82,4 +82,5 @@ export default {
 
   // Etc.
   'Ship Debris': '210000011.png',
+  'Blood Raider Data Compiler': '44070001000.png',
 }
