@@ -10,6 +10,7 @@
             <h3 class="pl-4 mb-4 text-lg uppercase border-l-4 border-green-500">The rebirth of the calculator </h3>
             <p>
               Hello Capsuleers!
+              <br/>
             </p>
             <p>
               This tool has now been updated by Nexus.<br/> 
