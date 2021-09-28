@@ -72,7 +72,7 @@ export default [
 {"id":"11004120017","text":"Domination Small Autocannon"},
 {"id":"11004120021","text":"Criminal Small Autocannon"},
 {"id":"11004120024","text":"Gistii C-Type Small Autocannon"},
-{"id":"11004220001","text":"Civilian Medium Autocannon"},},
+{"id":"11004220001","text":"Civilian Medium Autocannon"},
 {"id":"11004220012","text":"Jolt' Medium Autocannon"},
 {"id":"11004220013","text":"Republic Fleet Medium Autocannon"},
 {"id":"11004220021","text":"Free' Medium Autocannon"},
