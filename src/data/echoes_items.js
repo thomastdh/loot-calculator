@@ -159,7 +159,7 @@ export default [
 {"id":"11020000021","text":"Hurricane Large Torpedo Launcher"},
 {"id":"11020000024","text":"Pith C-Type Large Torpedo Launcher"},
 {"id":"11026000012","text":"Bubble Gun' Interdiction Sphere Launcher"},
-{"id":"11026000021","text":"Devour' Interdiction Sphere Launcher"}
+{"id":"11026000021","text":"Devour' Interdiction Sphere Launcher"},
 {"id":"11031000012","text":"Upir' Small Energy Nosferatu"},
 {"id":"11031000013","text":"Imperial Navy Small Energy Nosferatu"},
 {"id":"11031000021","text":"Vrykolakas' Small Energy Nosferatu"},
